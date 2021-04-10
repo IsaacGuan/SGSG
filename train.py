@@ -38,6 +38,8 @@ if __name__ == '__main__':
 
     z = pd.read_csv(os.path.join(DATA_DIR, dataset_name + '_z.csv'), header=None)
     z = pd.DataFrame(z)
+    if dataset_name == 'tables':
+        z = z.iloc[0:100, :]
     z = z.to_numpy()
     z = np.expand_dims(z, axis=1)
 
